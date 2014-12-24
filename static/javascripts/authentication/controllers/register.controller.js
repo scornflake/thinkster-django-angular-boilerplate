@@ -12,8 +12,25 @@
 
         vm.register = register;
 
+        activate();
+
+        function activate() {
+            if (Authentication.isAuthenticated()) {
+                window.url = "/";
+            }
+        }
+
         function register() {
-            Authentication.register(vm.email, vm.password, vm.username);
+            Authentication.register(vm.email, vm.password, vm.username).then(registerSuccess, registerError);
+
+            function registerSuccess(data, status, header, config) {
+                console.error("Got data: " + data);
+                Authentication.login(data.email, data.password);
+            }
+
+            function registerError(data, status, header, config) {
+                console.error("Fatal error during register!");
+            }
         }
     }
 })();

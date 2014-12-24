@@ -4,6 +4,7 @@
         .module('thinkster', [
             'thinkster.config',
             'thinkster.routes',
+            'thinkster.layout',
             'thinkster.authentication'
 
         ]);
