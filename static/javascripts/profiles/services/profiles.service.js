@@ -16,7 +16,7 @@
         return Profile;
 
         function destroy(profile) {
-            console.error("Calling delete on v1 API with: " + JSON.stringify(profile));
+//            console.error("Calling delete on v1 API with: " + JSON.stringify(profile));
             return $http.delete('/api/v1/accounts/' + profile.username + '/');
         }
 

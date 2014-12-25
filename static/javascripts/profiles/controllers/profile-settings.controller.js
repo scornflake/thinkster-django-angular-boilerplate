@@ -42,7 +42,6 @@
         }
 
         function destroy() {
-            console.error("Destroying " + vm.profile.username);
             Profile.destroy(vm.profile).then(destroySuccess, destroyFailure);
 
             function destroySuccess(data, status, headers, config) {

@@ -10,7 +10,7 @@
     function IndexController($scope, Authentication, Posts, Snackbar) {
         var vm = this;
 
-        vm.isAuthenticated = Authentication.isAuthenticated;
+        vm.isAuthenticated = Authentication.isAuthenticated();
         vm.posts = [];
 
         activate();
@@ -33,10 +33,7 @@
             function postsFailure(data, status, headers, config) {
                 Snackbar.error(data.error);
             }
-
         }
-
-
     }
 
 })();
