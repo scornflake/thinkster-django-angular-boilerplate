@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('thinkster.layout',[
+        .module('thinkster.layout', [
             'thinkster.layout.controllers'
         ]);
 
