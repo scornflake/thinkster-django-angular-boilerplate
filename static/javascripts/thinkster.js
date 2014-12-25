@@ -6,6 +6,7 @@
             'thinkster.routes',
             'thinkster.layout',
             'thinkster.posts',
+            'thinkster.profiles',
             'thinkster.utils',
             'thinkster.authentication'
 
