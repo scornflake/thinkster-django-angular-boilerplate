@@ -16,7 +16,8 @@
         return Profile;
 
         function destroy(profile) {
-            return $http.delete('/api/v1/accounts/' + profile.id + '/');
+            console.error("Calling delete on v1 API with: " + JSON.stringify(profile));
+            return $http.delete('/api/v1/accounts/' + profile.username + '/');
         }
 
         function get(username) {
@@ -24,7 +25,7 @@
         }
 
         function update(profile) {
-            return $http.put('/api/v1/accounts/' + profile.usename + '/', profile);
+            return $http.put('/api/v1/accounts/' + profile.username + '/', profile);
         }
     }
 

@@ -24,12 +24,11 @@
             Authentication.register(vm.email, vm.password, vm.username).then(registerSuccess, registerError);
 
             function registerSuccess(data, status, header, config) {
-                console.error("Got data: " + data);
                 Authentication.login(data.email, data.password);
             }
 
             function registerError(data, status, header, config) {
-                console.error("Fatal error during register!");
+                console.error("Fatal error during register! " + data.error);
             }
         }
     }
