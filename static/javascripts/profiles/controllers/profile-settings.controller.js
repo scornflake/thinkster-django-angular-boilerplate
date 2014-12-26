@@ -18,6 +18,7 @@
         function activate() {
             var authenticatedAccount = Authentication.getAuthenticatedAccount();
             var username = $routeParams.username.substr(1);
+            console.error("Username: '" + $routeParams.username.substr(0) + "'");
 
             if (!authenticatedAccount) {
                 $location.url("/");
@@ -32,6 +33,7 @@
             Profile.get(username).then(profileSuccessFn, profileErrorFn);
 
             function profileSuccessFn(data, status, headers, config) {
+                console.error("Data: " + JSON.stringify(data) + ", Status: " + status, " headers: " + headers + ", config: " + config);
                 vm.profile = data.data;
             }
 
